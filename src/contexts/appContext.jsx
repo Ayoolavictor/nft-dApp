@@ -84,9 +84,10 @@ export const AppProvider = ({ children }) => {
     );
 
     const handleMinted = (minter, tokenId) => {
-      setNextTokenId((prev) =>
-        prev !== null ? prev + 1 : tokenId.toNumber() + 1
-      );
+      setNextTokenId((prev) => {
+        const currentId = prev !== null ? BigInt(prev) : BigInt(tokenId);
+        return (currentId + BigInt(1)).toString(); // Convert to string to prevent BigInt issues
+      });
     };
 
     contract.on('Minted', handleMinted);
