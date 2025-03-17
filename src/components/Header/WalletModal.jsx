@@ -30,13 +30,13 @@ const WalletModal = () => {
     return (
         <Dialog.Root>
             <Dialog.Trigger>
-                <button className="bg-secondary text-primary px-4 py-2 rounded-md cursor-pointer">
+                <button className="bg-secondary text-tertiary px-4 py-2 rounded-md cursor-pointer">
                     Connect Wallet
                 </button>
             </Dialog.Trigger>
 
             <Dialog.Content maxWidth="450px">
-                <Dialog.Title className="text-primary">
+                <Dialog.Title className="text-tertiary">
                     Available Wallets
                 </Dialog.Title>
 
@@ -50,7 +50,7 @@ const WalletModal = () => {
                                 pendingConnectorUID ===
                                 walletConnectConnector.uid
                             }
-                            className="w-full flex gap-4 items-center p-4 bg-primary/85 text-secondary rounded-md"
+                            className="w-full flex gap-4 items-center p-4 bg-tertiary/85 text-secondary rounded-md"
                         >
                             <img
                                 src="https://logosarchive.com/wp-content/uploads/2022/02/WalletConnect-icon.svg"
@@ -70,7 +70,7 @@ const WalletModal = () => {
                                 key={connector.id}
                                 onClick={() => connectWallet(connector)}
                                 disabled={pendingConnectorUID === connector.uid}
-                                className="w-full flex gap-4 items-center p-4 bg-primary/85 text-secondary rounded-md"
+                                className="w-full flex gap-4 items-center p-4 bg-tertiary/85 text-secondary rounded-md"
                             >
                                 <img src={connector.icon} className="w-6 h-6" />
                                 <span className="ml-2">{connector.name}</span>
